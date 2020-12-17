@@ -1,60 +1,53 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+<template lang="pug">
+.newsContainer
+  .newsFlex
+    .newsItem(v-for= "item in news")
+      .newsImg(:style="{'background-image': 'url(' + item.img + ')'}")
+      .newsTitle {{item.title}}
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
-  }
-}
+    msg: String,
+  },
+  data(){
+    return{
+      news:[
+        {img:'https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/131432557_2857342427878078_5101152320245473747_o.jpg?_nc_cat=106&ccb=2&_nc_sid=730e14&_nc_ohc=zJlcTdj4Er8AX8yNSny&_nc_ht=scontent-hkt1-1.xx&oh=6bf7ed680bfcd6f5b4f0774b67865b9b&oe=6001890E', title:'hey'},
+        {img:'https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/131589570_2857342401211414_7356372572954515507_o.jpg?_nc_cat=100&ccb=2&_nc_sid=730e14&_nc_ohc=RXfWojNFdqQAX8wLQee&_nc_ht=scontent-hkt1-1.xx&oh=9dc5dab84b0a8400a11a58997554841a&oe=60001846', title:'hi'},
+        {img:'https://scontent-hkt1-1.xx.fbcdn.net/v/t1.0-9/131226962_2857342394544748_8902686430400113345_o.jpg?_nc_cat=100&ccb=2&_nc_sid=730e14&_nc_ohc=oFfNO1VX5ugAX-mbZvc&_nc_ht=scontent-hkt1-1.xx&oh=cb12d7b85ff42dd0b9384239b56982b5&oe=5FFF159E', title:'fuck u'},
+      ],
+    };
+  },
+};
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="sass">
+.newsFlex
+  display: flex
+  flex-direction: row
+  //border: 1px solid
+  width: 1000px
+  margin: auto
+  justify-content: space-between
+.newsItem
+  //border: 1px solid red
+  //width: 200px
+  //height: 200px
+.newsImg
+  //border: 2px solid green
+  width: 200px
+  height: 200px
+  background-size: cover
+  display: flex
+  flex-direction: column
+  justify-content: pace-between
+  margin-bottom: 25px
+  border-radious: 24
+.newsTitle
+
 </style>
