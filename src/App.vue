@@ -1,6 +1,6 @@
 <template lang="pug">
   #app
-    #nav
+    //#nav
       router-link(to="/") Home |
       router-link(to="/about") About
     router-view
@@ -14,7 +14,7 @@
   -moz-osx-font-smoothing: grayscale
   text-align: center
   color: #2c3e50
-  background-color: black
+  //background-color: black
 
 #nav 
   padding: 30px
